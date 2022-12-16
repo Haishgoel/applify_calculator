@@ -20,14 +20,13 @@ module.exports = {
         name: Joi.string().optional(),
         category: Joi.string().optional(),
     });
-	let payload = await commonHelper.verifyJoiSchema(payloadData, schema);
+  	let payload = await commonHelper.verifyJoiSchema(payloadData, schema);
     console.log("payload data===?",payload)
     
     let objToSave = {};  
     if (_.has(payload, "email") && payload.email != "") objToSave.email = payload.email;
     if (_.has(payload, "name") && payload.name != "") objToSave.name = payload.name;
     if (_.has(payload, "category") && payload.category != "") objToSave.category = payload.category;
-    
     
 let addCategory = await Service.addcategoryServices.saveData(objToSave);
 if (addCategory) {

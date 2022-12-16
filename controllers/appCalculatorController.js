@@ -17,9 +17,7 @@ const { valid } = require("joi");
 module.exports = {
   addCalculate: async (payloadData, path) => {
     const schema = Joi.object().keys({
-        mobile: Joi.number().valid(0,1).optional(),
-        web: Joi.number().optional(),
-        both: Joi.number().valid(0,1).optional(),
+        platform: Joi.string().optional(),
         email: Joi.number().valid(0,1).optional(),
         twoStep: Joi.number().valid(0,1).optional(),
         viaSocial: Joi.number().valid(0,1).optional(),
@@ -42,7 +40,7 @@ module.exports = {
     
     let objToSave = {};  
     if (_.has(payload, "mobile") && payload.mobile != "") objToSave.mobile = payload.mobile;
-    if (_.has(payload, "web") && payload.web != "") objToSave.web = payload.web;
+    if (_.has(payload, "platform") && payload.platform != "") objToSave.platform = payload.platform;
     if (_.has(payload, "both") && payload.both != "") objToSave.both = payload.both;
     if (_.has(payload, "email") && payload.email != "") objToSave.email = payload.email;
     if (_.has(payload, "twoStep") && payload.twoStep != "") objToSave.twoStep = payload.twoStep;

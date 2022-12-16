@@ -26,7 +26,7 @@ app.use("/", ejsfileRouter)
 app.use("/user", userRouter)
 app.use("/plateform", plateformRouter)
 app.use("/addcategory", addcategoryRouter)
-app.use("/appCalculator", appCalculatorRouter)
+app.use("/appcalculator", appCalculatorRouter)
 
 
 

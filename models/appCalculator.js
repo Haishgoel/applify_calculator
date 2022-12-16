@@ -7,20 +7,10 @@ module.exports = function (Sequelize, sequelize, DataTypes) {
             defaultValue: false,
             field: "image"
         },
-        web:{
-            type: DataTypes.INTEGER,
-			allowNull: false,
-            defaultValue :0
-        },
-        mobile:{
-            type: DataTypes.TINYINT(1),
-			defaultValue: 0,
-			field: "mobile"
-        },
-        both:{
-            type: DataTypes.TINYINT(1),
-			defaultValue: 0,
-			field: "both"
+        platform:{
+            type: DataTypes.STRING(255),   // 10 for web , 20 for mobile, 30 for both  
+			defaultValue: "webAPP",
+			field: "platform"
         },
         email:{
             type: DataTypes.TINYINT(1),
