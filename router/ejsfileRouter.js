@@ -17,15 +17,20 @@ router.get("/", async(req, res) => {
 router.get("/addcatergory", (req, res) => {
     res.render("addcatergory",{base:base});
   });
+
+router.get("/addbusiness", (req, res) => {
+    res.render("addbusiness",{base:base});
+  });
+  
   
 
-router.get("/categoryPage1",(req,res)=>{
-    res.render("categoryPage1",{base:base})
+router.get("/category",(req,res)=>{
+    res.render("category",{base:base})
   })
  
   
-router.get("/categoryPage2",(req,res)=>{
-    res.render("categoryPage2",{base:base})
+router.get("/business",(req,res)=>{
+    res.render("business",{base:base})
   })
   
 

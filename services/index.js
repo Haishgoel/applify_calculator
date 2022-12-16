@@ -1,4 +1,6 @@
 module.exports= {
     profileServices: require("./profileServices"),
-    plateformService:require("./plateformService")
+    plateformService:require("./plateformService"),
+    addcategoryServices: require("./addcategoryServices"),
+    appCalculatorServices: require("./appCalculatorServices")
   }

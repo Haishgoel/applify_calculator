@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public", express.static("public"));
 
@@ -17,23 +16,23 @@ app.use("/public", express.static("public"));
 
 const swaggerJsDocs = require("./config/documentation/swagger-admin.json");
 app.use("/swagger-docs", swaggerUI.serve, swaggerUI.setup(swaggerJsDocs));
-
 var ejsfileRouter=require("./router/ejsfileRouter")
 var userRouter=require("./router/profileRoutes")
-var plateform=require("./router/plateformRouter")
+var plateformRouter=require("./router/plateformRouter")
+var addcategoryRouter = require("./router/addcategoryRoutes")
+var appCalculatorRouter = require("./router/appCalculatorRoutes")
 
-app.use("/",ejsfileRouter)
-app.use("/user",userRouter)
-app.use("/plateform",plateform)
+app.use("/", ejsfileRouter)
+app.use("/user", userRouter)
+app.use("/plateform", plateformRouter)
+app.use("/addcategory", addcategoryRouter)
+app.use("/appCalculator", appCalculatorRouter)
+
 
 
 require("./dbConnection").connectDB(); 
 
 require("./models/index");
-
-
-
-
 
 app.listen(process.env.PORT, () => {
   console.log(`http://localhost:${process.env.PORT}`);
