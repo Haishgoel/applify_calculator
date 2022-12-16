@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const sendResponse = require("../Helper/sendResponse");
-let base = "http://localhost:8080";
+let base = "http://localhost:3002";
 const plateformController=require("../controllers/plateformController")
 
 

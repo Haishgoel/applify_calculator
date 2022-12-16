@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/public", express.static("public"));
 
-// let base = "http://localhost:8080";
+
 
 const swaggerJsDocs = require("./config/documentation/swagger-admin.json");
 app.use("/swagger-docs", swaggerUI.serve, swaggerUI.setup(swaggerJsDocs));
