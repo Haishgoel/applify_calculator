@@ -1,6 +1,6 @@
 module.exports = {
-  userController: require("./userController"),
   plateformController:require("./plateformController"),
   addcategoryController: require("./addcategoryController"),
-  appCalculatorController: require("./appCalculatorController")
+  appCalculatorController: require("./appCalculatorController"),
+  categoryController: require("./categoryController")
 };

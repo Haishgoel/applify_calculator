@@ -1,17 +1,53 @@
 var express = require("express");
 var router = express.Router();
 const sendResponse = require("../Helper/sendResponse");
-let base = "http://localhost:3002";
-const plateformController=require("../controllers/plateformController")
+let base = "http://localhost:3001";
+const plateformController=require("../controllers/plateformController");
+const categoryController = require("../controllers/categoryController");
 
 
 router.get("/", async(req, res) => {
   let data=await plateformController.getPlateform()
-    res.render("applify", {
-      data:data,
-      base: base,
-    });
+  console.log("order data values====>", data)
+  res.render("applify",{
+    data: data,
+    base: base,
+    imgs: "/public/images/app1.png",
+    order:5,
+    imgId: data.id
+  })
+  // let data=await plateformController.getPlateform()
+  //   res.render("applify", {
+  //     data:data,
+  //     base: base,
+  //     order: 6,
+  //     imgs: "/public/images/app1.png",
+  //     imgId: 4
+  //   });
   });
+
+  router.get("/get", async(req, res) => {
+    var id=JSON.parse(JSON.stringify(req.query)  ) 
+    console.log("id-========",id.id)  
+    let data = await categoryController.getAllCategory(id.id)
+    console.log("data params====>",data)
+    res.render("applify",{
+      counts: data.count,
+      data: data.rows,
+      base: base,
+      order: categoryName,
+      imgs: "/public/images/app1.png",
+      imgId: data.id
+    })
+    // let data=await plateformController.getPlateform()
+    //   res.render("applify", {
+    //     data:data,
+    //     base: base,
+    //     order: 6,
+    //     imgs: "/public/images/app1.png",
+    //     imgId: 4
+    //   });
+    });
   
 
 router.get("/addcatergory", (req, res) => {

@@ -49,7 +49,7 @@
         <div class="row main_row">
           <div class="col-md-12">
             <form id="msform">
-      
+
               <fieldset>
                 <div class="next main_div_row_one cost_steps">
                   <div class="row ">
@@ -59,27 +59,395 @@
                   </div>
                   <div class="row row_bx">
                     <div class="col-lg-6 col-md-12">
-                      <a href="<%=base%>/category">
                       <div class="exist_business_bx clr_black">
                         <h3> Readymade (save upto 40% of the cost) </h3>
                         <p> Uber, Intagram, Airbnb, Whatsapp etc. </p>
-                        <img src="/public/images/mobile.png" alt="">
+                        <img src="/public/images/mobile.png" alt="" id="1" class="A">
+
                       </div>
-                    </a>
                     </div>
                     <div class="col-lg-6 col-md-12">
-                      <a href="<%=base%>/business">
                       <div class="exist_business_bx clr_orange">
                         <h3> Custom App </h3>
                         <p> Cars & Transport, Social networking, Travel, <br> Health & Beauty etc. </p>
-                        <img src="/public/images/cate2.png" alt="">
+                        <img src="/public/images/cate2.png" alt="" id="2" class="A">
                       </div>
-                    </a>
                     </div>
                   </div>
                 </div>
 
               </fieldset>
+              <!-- Image call dynamic -->
+              <fieldset>
+                <div class="row previous">
+                  <div class="col-md-12">
+                    <div class=" title_text">
+                      <a href="#_" class="">
+                        <i class="fa fa-angle-left"></i> Back </a>
+                      <h2>Industry or Category</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <% for(var i=0; i < order; i++){ %>
+
+                  <div class="next col-lg-3 col-md-4">
+                    <span class="app_logo">
+                      <img src="<%=imgs%>" alt="" id="<%=imgId%>">
+
+                      <!-- </span> <h2>this is data</h2> -->
+                  </div>
+
+                  <% } %>
+                    <div class="col-lg-3 col-md-4">
+                      <!-- <a href="<%=base%>/addcatergory"> -->
+                      <span class="app_logo add_new btn_stroke" id="myBtn">+ Add new category</span>
+                      <!-- </a> -->
+
+                    </div>
+
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div class="add_new_cate cost_steps1">
+                          <div class="row ">
+                            <div class="col-md-12">
+                              <h2>Choose your Application</h2>
+                            </div>
+                          </div>
+                          <a href="<%=base%>/" class="">
+                            <i class="fa fa-angle-left"></i> Back </a>
+                          <!-- <form action="/addcategory/add" method="post"> -->
+                            <h3>Add new application</h3>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="categorys" name="category"
+                                placeholder="Required category">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="names" name="name" placeholder="Your name *">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="emails" name="email"
+                                placeholder="Email address for notifications *">
+                            </div>
+                            <!-- <div class="form-check"><input type="checkbox" class="form-check-input" id="exampleCheck1"><label class="form-check-label" for="exampleCheck1">Check me out</label></div> -->
+                            <button class="submits" type="submit" href="/">Submit</button>
+                            <!-- </form> -->
+                        </div>
+                      </div>
+                    </div>
+
+
+
+              </fieldset>
+
+
+              <fieldset>
+                <div class="previous title_text">
+                  <!-- <a href="<%=base%>/categoryPage1" class=""> -->
+                  <a href="#_" class="">
+                    <i class="fa fa-angle-left"></i> Back
+                  </a>
+                  <h2>Platform</h2>
+                </div>
+                <!--  <h2 class="fs-title"></h2> -->
+
+
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Web <br>App</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="<%=data.dataValues.web%>" class="sum" name="optionsRadios"
+                            id="web">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Mobile<br> App</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="<%=data.dataValues.mobile%>" class="sum" name="optionsRadios"
+                            id="mobile">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Both</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="<%=data.dataValues.both%>" class="sum" name="optionsRadios"
+                            id="both">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="button" id="btns" name="next" disabled class="next Login Typen" value="Save and Continue"
+                  style="background-color: #F06824;" />
+
+              </fieldset>
+
+
+              <fieldset>
+                <div class="previous title_text">
+                  <a href="#_" class="">
+                    <i class="fa fa-angle-left"></i> Back </a>
+                  <h2>Login Type</h2>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Email Login</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="<%=data.dataValues.email%>" class="sum" name="login"
+                            id="emaillogin">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Via Social Networks</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="login" id="via social Networks"
+                            value="<%=data.dataValues.viaSocial%>" class="sum">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">2 Step Authentications</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="login" value="<%=data.dataValues.twoStep%>" class="sum"
+                            id="2 step Authentications">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">No Signup Required</span>
+
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="login" id="No Signup Required" class="sum"
+                            value="<%=data.dataValues.NoSignUp%>">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="button" id="bttn" disabled name="next" class="next btn_main" value="Save and Continue" />
+
+
+              </fieldset>
+
+
+              <fieldset>
+                <div class="previous title_text">
+                  <a href="#_" class="">
+                    <i class="fa fa-angle-left"></i> Back </a>
+                  <h2 class="fs-title">Profile Creation</h2>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Users & Accounts Required</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="user" id="user & Accounts Required" class="sum"
+                            value="<%=data.dataValues.accrequired%>">
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div _ngcontent-my-app-c9="" class="option mat-ripple ng-star-inserted" mat-ripple="">
+                      <span _ngcontent-my-app-c9="" class="text">Not Required</span>
+                      <!---->
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="user" id="Not Required" class="sum"
+                            value="<%=data.dataValues.notrequired%>">
+
+                          <span class="indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <input type="text" name="twitter" placeholder="Twitter" />
+          <input type="text" name="facebook" placeholder="Facebook" />
+          <input type="text" name="gplus" placeholder="Google Plus" /> -->
+                <!-- <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> -->
+                <input type="button" id="user-btn" disabled name="next" class="next btn_main"
+                  value="Save and Continue" />
+
+
+              </fieldset>
+
+
+              <fieldset>
+                <div class="previous title_text">
+                  <a href="#_" class="">
+                    <i class="fa fa-angle-left"></i> Back </a>
+                  <h2>Feature Types</h2>
+                </div>
+                <h3 class="fs-subtitle">Please choose required features below:</h3>
+                <div class="main_list_bx">
+                  <ul class="check_ul">
+                    <h4>Enough for MVP</h4>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="User Feed" class="sum" value="<%=data.dataValues.userFeed%>"
+                          name="userFeed">
+                        <label for="User Feed">User Feed <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Search" class="sum" value="<%=data.dataValues.search%>"
+                          name="search">
+                        <label for="Search">Search <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" class="sum" id="Messaging and User Engagement"
+                          value="<%=data.dataValues.messUserMan%>" name="messUserMan">
+                        <label for="Messaging and User Engagement">Messaging and User Engagement <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Payment and eCommerce" class="sum"
+                          value="<%=data.dataValues.payEcommerce%>" name="payEcommerce">
+                        <label for="Payment and eCommerce">Payment and eCommerce <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" class="sum" value=" <%=data.dataValues.userGenerated%>"
+                          name="userGenerated" id="User-Generated Content">
+                        <label for="User-Generated Content">User-Generated Content <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Booking" class="sum" value="<%=data.dataValues.Booking%>"
+                          name="Booking">
+                        <label for="Booking">Booking <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="check_ul">
+                    <h4>Additional features</h4>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Push Notifications" class="sum" value="<%=data.dataValues.pushNoti%>"
+                          name="pushNoti">
+                        <label for="Push Notifications">Push Notifications <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Rating & Reviews" class="sum"
+                          value="<%=data.dataValues.RatingReview%>" name="RatingReview">
+                        <label for="Rating & Reviews">Rating & Reviews <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Rewards and Deals" class="sum"
+                          value="<%=data.dataValues.RewardDeal%>" name="RewardDeal">
+                        <label for="Rewards and Deals">Rewards & Deals <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-group">
+                        <input type="checkbox" id="Category and Filters" class="sum"
+                          value="<%=data.dataValues.categoryFilter%>" name="categoryFilter">
+                        <label for="Category and Filters">Category & Filters <span>
+
+                          </span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- <span id="payment-total" style="text-decoration:underline;">0</span> -->
+                  <!-- <input id="input" type="text" value="0"/> -->
+                </div>
+
+                <input type="button" id="check-btn" disabled class="next btn_main" value="Save and Continue" />
+              </fieldset>
+
+
+              <fieldset>
+                <h2 class="fs-title">Submit project</h2>
+                <h3 class="fs-subtitle">Fill in your credentials to authorize submission</h3>
+                <input type="text" name="email" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <!-- <input type="submit" name="submit" class="submit btn_main" value="Submit" /> -->
+                <a href=""> <button type="submit" class="submit btn_main">Send</button> </a>
+              </fieldset>
+
+
+              <!-- progressbar -->
+              <!-- <ul id="progressbar">
+            <li class="active"></li>
+             <li></li>
+             <li></li>
+             <li></li>
+        </ul> -->
 
             </form>
           </div>
@@ -88,6 +456,7 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script>
@@ -101,13 +470,133 @@
         $("input.sum").change(updateSum);
         updateSum();
       })
+
+      // $(document).ready(function () {
+      //   $(".A ,.app_logo,.sum").click(function () {
+      //     console.log(event.target.id)
+       
+      //     let id = (event.target.id)
+      //     $.ajax({
+      //       method: "GET",
+      //       url: "/get",
+      //       data: { id },
+      //     })
+      //       .done(function (msg) {
+      //         alert( "Data Saved: " + msg );
+      //       });
+      //   })
+      // })
+
+
+      // $(document).ready(function () {
+      //   $(".A ,.app_logo,.sum").click(function () {
+      //     let id = (event.target.id)
+      //    var x=$("form").serializeArray();
+      //    console.log("calculateData===>1",x)
+      //    $.each(x,function(i,field){
+      //     console.log("field: " + field)
+      //     alert(field)
+      //    })
+      //   })
+      // })
+
+
+      $(document).ready(function () {
+        $(".A,.app_logo,.sum").click(function () {
+          var x = $("form").serializeArray();
+          $.each(x, function (i, field) {
+            $("#results").append(field.id + ":" + field.value + " ");
+            console.log("calculate data=====21112>>>>", x)
+          });
+        });
+      });
+
     </script>
 
+
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal 
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+    <script>
+      $(".submits").click(function () {
+          var name = $("#names").val();
+          var email = $("#emails").val();
+          var category = $("#categorys").val();
+          alert(name)
+        //This is for send the add category data but not work
+        $.ajax({
+          method: "POST",
+          url: "http://localhost:3001/addcategory/add",
+          data: {name,email,category },
+        })
+          .done(function (msg) {
+            alert("Data send seccussfull")
+          });
+      })
+    </script>
+
+    <script>
+      var inputElems = document.getElementsByClassName("sum");
+      for (var i = inputElems.length - 1; i >= 0; --i) {
+        var elem = inputElems[i];
+        elem.onchange = function () {
+          document.getElementById("check-btn").removeAttribute("disabled")
+        };
+      }
+
+      var inputElems = document.getElementsByName("login");
+      for (var i = inputElems.length - 1; i >= 0; --i) {
+        var elem = inputElems[i];
+        elem.onchange = function () {
+          document.getElementById("bttn").removeAttribute("disabled")
+        };
+      }
+
+      var inputElems = document.getElementsByName("user");
+      for (var i = inputElems.length - 1; i >= 0; --i) {
+        var elem = inputElems[i];
+        elem.onchange = function () {
+          document.getElementById("user-btn").removeAttribute("disabled")
+        };
+      }
+
+      var inputElems = document.getElementsByName("optionsRadios");
+      for (var i = inputElems.length - 1; i >= 0; --i) {
+        var elem = inputElems[i];
+        elem.onchange = function () {
+          document.getElementById("btns").removeAttribute("disabled")
+        };
+      }
+    </script>
 
     <script type="text/javascript">
     </script>
-
-
 
     <script>
       //jQuery time
