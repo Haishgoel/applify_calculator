@@ -500,21 +500,10 @@
       //   })
       // })
 
-
-      $(document).ready(function () {
-        $(".A,.app_logo,.sum").click(function () {
-          var x = $("form").serializeArray();
-          $.each(x, function (i, field) {
-            $("#results").append(field.id + ":" + field.value + " ");
-            console.log("calculate data=====21112>>>>", x)
-          });
-        });
-      });
-
     </script>
 
-
-
+  
+    <!-- open modal script  -->
     <script>
       // Get the modal
       var modal = document.getElementById("myModal");
@@ -542,25 +531,27 @@
         }
       }
     </script>
+   
 
+    <!-- Add category added scripts -->
     <script>
       $(".submits").click(function () {
           var name = $("#names").val();
           var email = $("#emails").val();
           var category = $("#categorys").val();
-          alert(name)
+          // alert(name)
         //This is for send the add category data but not work
         $.ajax({
           method: "POST",
           url: "http://localhost:3001/addcategory/add",
           data: {name,email,category },
-        })
-          .done(function (msg) {
+        }).done(function (msg) {
             alert("Data send seccussfull")
           });
       })
     </script>
 
+   <!-- valiadation scripts -->
     <script>
       var inputElems = document.getElementsByClassName("sum");
       for (var i = inputElems.length - 1; i >= 0; --i) {
@@ -680,9 +671,9 @@
           easing: 'easeInOutBack'
         });
       });
-      $(".submit").click(function () {
-        return false;
-      })
+      // $(".submit").click(function () {
+      //   return false;
+      // })
     </script>
 </body>
 
