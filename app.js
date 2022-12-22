@@ -21,9 +21,11 @@ var plateformRouter=require("./router/plateformRouter")
 var addcategoryRouter = require("./router/addcategoryRoutes")
 var appCalculatorRouter = require("./router/appCalculatorRoutes")
 var categoryRouter = require("./router/categoryRoutes")
+var userRouter = require("./router/userRoutes")
 
 
 app.use("/", ejsfileRouter)
+app.use("/user", userRouter)
 app.use("/plateform", plateformRouter)
 app.use("/addcategory", addcategoryRouter)
 app.use("/appcalculator", appCalculatorRouter)

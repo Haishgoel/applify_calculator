@@ -8,7 +8,7 @@ const categoryController = require("../controllers/categoryController");
 
 router.get("/", async(req, res) => {
   let data=await plateformController.getPlateform()
-  console.log("order data values====>", data)
+  // console.log("order data values====>", data)
   res.render("applify",{
     data: data,
     base: base,

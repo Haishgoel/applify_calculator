@@ -48,7 +48,7 @@
       <div class="container">
         <div class="row main_row">
           <div class="col-md-12">
-            <form id="msform">
+            <form action ="http://localhost:3001/user/add" method="POST" id="msform">
 
               <fieldset>
                 <div class="next main_div_row_one cost_steps">
@@ -62,7 +62,7 @@
                       <div class="exist_business_bx clr_black">
                         <h3> Readymade (save upto 40% of the cost) </h3>
                         <p> Uber, Intagram, Airbnb, Whatsapp etc. </p>
-                        <img src="/public/images/mobile.png" alt="" id="1" class="A">
+                        <img src="/public/images/mobile.png" name="img" alt="" id="1" class="A">
 
                       </div>
                     </div>
@@ -70,7 +70,7 @@
                       <div class="exist_business_bx clr_orange">
                         <h3> Custom App </h3>
                         <p> Cars & Transport, Social networking, Travel, <br> Health & Beauty etc. </p>
-                        <img src="/public/images/cate2.png" alt="" id="2" class="A">
+                        <img src="/public/images/cate2.png" name="img" alt="" id="2" class="A">
                       </div>
                     </div>
                   </div>
@@ -120,21 +120,21 @@
                           <a href="<%=base%>/" class="">
                             <i class="fa fa-angle-left"></i> Back </a>
                           <!-- <form action="/addcategory/add" method="post"> -->
-                            <h3>Add new application</h3>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="categorys" name="category"
-                                placeholder="Required category">
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="names" name="name" placeholder="Your name *">
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control" id="emails" name="email"
-                                placeholder="Email address for notifications *">
-                            </div>
-                            <!-- <div class="form-check"><input type="checkbox" class="form-check-input" id="exampleCheck1"><label class="form-check-label" for="exampleCheck1">Check me out</label></div> -->
-                            <button class="submits" type="submit" href="/">Submit</button>
-                            <!-- </form> -->
+                          <h3>Add new application</h3>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="categorys" name="category"
+                              placeholder="Required category">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="names" name="name" placeholder="Your name *">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="emails" name="email"
+                              placeholder="Email address for notifications *">
+                          </div>
+                          <!-- <div class="form-check"><input type="checkbox" class="form-check-input" id="exampleCheck1"><label class="form-check-label" for="exampleCheck1">Check me out</label></div> -->
+                          <button class="submits" type="submit" href="/">Submit</button>
+                          <!-- </form> -->
                         </div>
                       </div>
                     </div>
@@ -162,7 +162,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.web%>" class="sum" name="optionsRadios"
+                          <input type="radio" value="<%=data.dataValues.web%>" class="sum first" name="optionsRadios"
                             id="web">
                           <span class="indicator"></span>
                         </label>
@@ -176,7 +176,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.mobile%>" class="sum" name="optionsRadios"
+                          <input type="radio" value="<%=data.dataValues.mobile%>" class="sum first" name="optionsRadios"
                             id="mobile">
                           <span class="indicator"></span>
                         </label>
@@ -190,7 +190,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.both%>" class="sum" name="optionsRadios"
+                          <input type="radio" value="<%=data.dataValues.both%>" class="sum first" name="optionsRadios"
                             id="both">
                           <span class="indicator"></span>
                         </label>
@@ -218,7 +218,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.email%>" class="sum" name="login"
+                          <input type="radio" value="<%=data.dataValues.email%>" class="sum login" name="login"
                             id="emaillogin">
                           <span class="indicator"></span>
                         </label>
@@ -232,7 +232,7 @@
                       <div class="radio">
                         <label>
                           <input type="radio" name="login" id="via social Networks"
-                            value="<%=data.dataValues.viaSocial%>" class="sum">
+                            value="<%=data.dataValues.viaSocial%>" class="sum login">
                           <span class="indicator"></span>
                         </label>
                       </div>
@@ -244,7 +244,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" name="login" value="<%=data.dataValues.twoStep%>" class="sum"
+                          <input type="radio" name="login" value="<%=data.dataValues.twoStep%>" class="sum login"
                             id="2 step Authentications">
                           <span class="indicator"></span>
                         </label>
@@ -257,7 +257,7 @@
 
                       <div class="radio">
                         <label>
-                          <input type="radio" name="login" id="No Signup Required" class="sum"
+                          <input type="radio" name="login" id="No Signup Required" class="sum login"
                             value="<%=data.dataValues.NoSignUp%>">
                           <span class="indicator"></span>
                         </label>
@@ -285,7 +285,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" name="user" id="user & Accounts Required" class="sum"
+                          <input type="radio" name="user" id="user & Accounts Required" class="sum profile"
                             value="<%=data.dataValues.accrequired%>">
                           <span class="indicator"></span>
                         </label>
@@ -298,7 +298,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" name="user" id="Not Required" class="sum"
+                          <input type="radio" name="user" id="Not Required" class="sum profile"
                             value="<%=data.dataValues.notrequired%>">
 
                           <span class="indicator"></span>
@@ -330,7 +330,7 @@
                     <h4>Enough for MVP</h4>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="User Feed" class="sum" value="<%=data.dataValues.userFeed%>"
+                        <input type="checkbox" id="User Feed" class="sum check" value="<%=data.dataValues.userFeed%>"
                           name="userFeed">
                         <label for="User Feed">User Feed <span>
 
@@ -339,7 +339,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Search" class="sum" value="<%=data.dataValues.search%>"
+                        <input type="checkbox" id="Search" class="sum check" value="<%=data.dataValues.search%>"
                           name="search">
                         <label for="Search">Search <span>
 
@@ -348,7 +348,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" class="sum" id="Messaging and User Engagement"
+                        <input type="checkbox" class="sum check" id="Messaging and User Engagement"
                           value="<%=data.dataValues.messUserMan%>" name="messUserMan">
                         <label for="Messaging and User Engagement">Messaging and User Engagement <span>
 
@@ -357,7 +357,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Payment and eCommerce" class="sum"
+                        <input type="checkbox" id="Payment and eCommerce" class="sum check"
                           value="<%=data.dataValues.payEcommerce%>" name="payEcommerce">
                         <label for="Payment and eCommerce">Payment and eCommerce <span>
 
@@ -366,7 +366,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" class="sum" value=" <%=data.dataValues.userGenerated%>"
+                        <input type="checkbox" class="sum check" value=" <%=data.dataValues.userGenerated%>"
                           name="userGenerated" id="User-Generated Content">
                         <label for="User-Generated Content">User-Generated Content <span>
 
@@ -375,7 +375,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Booking" class="sum" value="<%=data.dataValues.Booking%>"
+                        <input type="checkbox" id="Booking" class="sum check" value="<%=data.dataValues.Booking%>"
                           name="Booking">
                         <label for="Booking">Booking <span>
 
@@ -387,8 +387,8 @@
                     <h4>Additional features</h4>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Push Notifications" class="sum" value="<%=data.dataValues.pushNoti%>"
-                          name="pushNoti">
+                        <input type="checkbox" id="Push Notifications" class="sum check"
+                          value="<%=data.dataValues.pushNoti%>" name="pushNoti">
                         <label for="Push Notifications">Push Notifications <span>
 
                           </span></label>
@@ -396,7 +396,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Rating & Reviews" class="sum"
+                        <input type="checkbox" id="Rating & Reviews" class="sum check"
                           value="<%=data.dataValues.RatingReview%>" name="RatingReview">
                         <label for="Rating & Reviews">Rating & Reviews <span>
 
@@ -405,7 +405,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Rewards and Deals" class="sum"
+                        <input type="checkbox" id="Rewards and Deals" class="sum check"
                           value="<%=data.dataValues.RewardDeal%>" name="RewardDeal">
                         <label for="Rewards and Deals">Rewards & Deals <span>
 
@@ -414,7 +414,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Category and Filters" class="sum"
+                        <input type="checkbox" id="Category and Filters" class="sum check"
                           value="<%=data.dataValues.categoryFilter%>" name="categoryFilter">
                         <label for="Category and Filters">Category & Filters <span>
 
@@ -459,7 +459,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         function updateSum() {
           var total = 0;
@@ -500,21 +500,178 @@
       //   })
       // })
 
+    </script> -->
+
+    <!-- <script>
+      // Function for add the cost
+      $(document).ready(function () {
+        function updateSum() {
+          var total = 0;
+          $(".sum:checked").each(function (i, n) { total += parseInt($(n).val()); })
+          $("#total").val(total);
+        }
+        // run the update on every checkbox change and on startup
+        $("input.sum").change(updateSum);
+        updateSum();
+      })
+
+      // Send the image id to router
+      // $(document).ready(function () {
+      //   $(".A ,.app_logo,.sum").click(function () {
+      //     // alert(event.target.id)
+      //     let id = (event.target.id)
+      //     $.ajax({
+      //       method: "GET",
+      //       url: "/get",
+      //       data: { id },
+      //     })
+      //       .done(function (msg) {
+      //         alert(id)
+      //       });
+      //   })
+      // })
+
+
+      //To store the user selected data in array and after submit send to database
+      $(document).ready(function () {
+
+       
+        // let arr = []
+        // console.log("array",arr)
+        $('input:radio').click(function () {
+          var ret = {};
+          $('input:radio:checked').toArray()
+            .forEach(r => ret[r.name] = r.id);
+          console.log("radio",JSON.stringify(ret));
+        });
+        $('input:checkbox').click(function () {
+          var rets = {};
+          console.log("rest=====>",rets)
+          $('input:checkbox:checked').toArray()
+            .forEach(r => rets[r.name] = r.id);
+          console.log("checkbox",JSON.stringify(rets));
+        });
+        
+       
+
+    
+
+      })
+
+    </script> -->
+
+
+    <script>
+      $(document).ready(function () {
+        function updateSum() {
+          var total = 0;
+          $(".sum:checked").each(function (i, n) { total += parseInt($(n).val()); })
+          $("#total").val(total);
+        }
+        // run the update on every checkbox change and on startup
+        $("input.sum").change(updateSum);
+        updateSum();
+      })
+      var arr = {}
 
       $(document).ready(function () {
-        $(".A,.app_logo,.sum").click(function () {
-          var x = $("form").serializeArray();
-          $.each(x, function (i, field) {
-            $("#results").append(field.id + ":" + field.value + " ");
-            console.log("calculate data=====21112>>>>", x)
-          });
-        });
-      });
 
+        $(".A").click(function () {
+
+          console.log("this is osapp", event.target.id)
+          arr.osapp = event.target.id;
+          arr.newArr = [];
+          console.log("thisisisss", arr)
+        })
+
+        $(".app_logo").click(function () {
+
+          console.log("this is industry", event.target.id)
+          arr.industry = event.target.id;
+          // arr.push({ logoselect: event.target.id })
+          console.log("thisisisss", arr)
+        })
+
+        $(".first").click(function () {
+
+          console.log("this is platform", event.target.id)
+          if (arr.webselect) {
+            // arr.push({ webselect: event.target.id })
+            delete arr["platform"]
+            arr.platform = event.target.id
+            console.log("thisisisss", arr)
+          }
+          else {
+            // arr.pop();
+            // arr.push({ webselect: event.target.id })
+            arr.platform = event.target.id
+            console.log("thisisisss", arr)
+          }
+
+        })
+
+        $(".login").click(function () {
+
+          console.log("this is logintype", event.target.id)
+          if (!arr.logintype) {
+            arr.logintype = event.target.id
+            // arr.push({ logintype: event.target.id })
+            console.log("thisisisss", arr)
+          }
+          else {
+            // arr.pop();
+            // arr.push({ logintype: event.target.id })
+            delete arr["logintype"]
+            arr.logintype = event.target.id
+            console.log("thisisisss", arr)
+          }
+
+        })
+
+        $(".profile").click(function () {
+
+          console.log("this is profilecreate", event.target.id)
+          if (!arr.profile) {
+            // arr.push({ profilecreate: event.target.id })
+            arr.profile = event.target.id
+            console.log("thisisisss", arr)
+          }
+          else {
+            // arr.pop();
+            // arr.push({ profilecreate: event.target.id })
+
+            delete arr["profile"]
+            arr.profile = event.target.id
+            console.log("thisisisss", arr)
+          }
+
+        })
+
+        $(".check").click(function () {
+          //  arr[0].newArr=[];
+          console.log("thisisisss", event.target.id)
+          arr.newArr.push({ multiselect: event.target.id })
+          console.log("this is last", arr)
+          console.log("thisisisss", arr.newArr)
+
+
+        })
+
+        $(".laststep").click(function () {
+          var name = $("#name").val();
+          var email = $("#email").val();
+
+          // arr[0].push({ name: name,email:email })
+          arr.name = name
+          arr.email = email
+          console.log("This is final=====>", arr)
+
+        })
+
+      })
     </script>
 
-
-
+    <!-- open modal script  -->
     <script>
       // Get the modal
       var modal = document.getElementById("myModal");
@@ -543,24 +700,26 @@
       }
     </script>
 
+
+    <!-- Add category added scripts -->
     <script>
       $(".submits").click(function () {
-          var name = $("#names").val();
-          var email = $("#emails").val();
-          var category = $("#categorys").val();
-          // alert(name)
+        var name = $("#names").val();
+        var email = $("#emails").val();
+        var category = $("#categorys").val();
+        // alert(name)
         //This is for send the add category data but not work
         $.ajax({
           method: "POST",
           url: "http://localhost:3001/addcategory/add",
-          data: {name,email,category },
-        })
-          .done(function (msg) {
-            alert("Data send seccussfull")
-          });
+          data: { name, email, category },
+        }).done(function (msg) {
+          alert("Data send seccussfull")
+        });
       })
     </script>
 
+    <!-- valiadation scripts -->
     <script>
       var inputElems = document.getElementsByClassName("sum");
       for (var i = inputElems.length - 1; i >= 0; --i) {
@@ -680,9 +839,9 @@
           easing: 'easeInOutBack'
         });
       });
-      $(".submit").click(function () {
-        return false;
-      })
+      // $(".submit").click(function () {
+      //   return false;
+      // })
     </script>
 </body>
 

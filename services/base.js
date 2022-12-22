@@ -53,6 +53,19 @@ exports.saveData = (model, objToSave) => {
 	});
 };
 
+exports.saveDataa = (model, objToSave) => {
+	return new Promise((resolve, reject) => {
+		model
+			.bulkCreate(objToSave)
+			.then((result) => {
+				resolve(result);
+			}).catch((err) => {
+				console.log(err);
+				reject(Response.error_msg.implementationError);
+			});
+	});
+};
+
 exports.updateData = (model, criteria, objToSave,) => {
 	console.log("%%%%%%%%%",objToSave)
 	return new Promise((resolve, reject) => {
