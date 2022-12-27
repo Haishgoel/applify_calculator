@@ -91,9 +91,7 @@ exports.getplateform = (criteria, projection) => {
 exports.getplateformAll = () => {
 	return new Promise((resolve, reject) => {
 		Models.plateform
-			.findOne({
-				
-				
+			.findOne({		
 			})
 			.then(result => {
 				resolve(result);

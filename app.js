@@ -32,7 +32,6 @@ app.use("/appcalculator", appCalculatorRouter)
 app.use("/category", categoryRouter)
 
    
-
 require("./dbConnection").connectDB(); 
 
 require("./models/index");

@@ -32,12 +32,12 @@ exports.getAllCategory = (criteria, projection) => {
 	});
 };
 
-exports.getCategory = (criteria, projection) => {
+exports.getCategory = (typeId) => {
 	return new Promise((resolve, reject) => {
 		Models.category
-			.findOne({
-				where: criteria,
-				attributes: projection,
+			.findAll({
+				where: {typeId : typeId},
+				// attributes: projection,
 			})
 			.then(result => {
 				resolve(result);

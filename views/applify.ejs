@@ -59,7 +59,7 @@
                   </div>
                   <div class="row row_bx">
                     <div class="col-lg-6 col-md-12">
-                      <div class="exist_business_bx clr_black">
+                      <div class="exist_business_bx clr_black" onclick="selectWebFixedAndNonFixed(1);">
                         <h3> Readymade (save upto 40% of the cost) </h3>
                         <p> Uber, Intagram, Airbnb, Whatsapp etc. </p>
                         <img src="/public/images/mobile.png" name="img" alt="" id="1" class="A">
@@ -67,7 +67,7 @@
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
-                      <div class="exist_business_bx clr_orange">
+                      <div class="exist_business_bx clr_orange" onclick="selectWebFixedAndNonFixed(2);">
                         <h3> Custom App </h3>
                         <p> Cars & Transport, Social networking, Travel, <br> Health & Beauty etc. </p>
                         <img src="/public/images/cate2.png" name="img" alt="" id="2" class="A">
@@ -75,7 +75,6 @@
                     </div>
                   </div>
                 </div>
-
               </fieldset>
               <!-- Image call dynamic -->
               <fieldset>
@@ -89,16 +88,29 @@
                   </div>
                 </div>
 
-                <% for(var i=0; i < order; i++){ %>
+                <% for(var i=0; i < data.length; i++){ %>
 
-                  <div class="next col-lg-3 col-md-4">
-                    <span class="app_logo">
-                      <img src="<%=imgs%>" alt="" id="<%=imgId%>">
+                  <div class="next col-lg-3 col-md-4 data">
+                    <span class="app_logo" id="1">
+                      <!-- <img src="<%=imgs%>" alt="" id="<%=imgId%>"> -->
+                      <%=data[i].categoryName%>
 
                       <!-- </span> <h2>this is data</h2> -->
                   </div>
 
                   <% } %>
+
+                  <% for(var i=0; i < data1.length; i++){ %>
+
+                    <div class="next col-lg-3 col-md-4 data1">
+                      <span class="app_logo" id="2">
+                        <!-- <img src="<%=imgs%>" alt="" id="<%=imgId%>"> -->
+                        <%=data1[i].categoryName%>
+  
+                        <!-- </span> <h2>this is data</h2> -->
+                    </div>
+  
+                    <% } %>
                     <div class="col-lg-3 col-md-4">
                       <!-- <a href="<%=base%>/addcatergory"> -->
                       <span class="app_logo add_new btn_stroke" id="myBtn">+ Add new category</span>
@@ -162,7 +174,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.web%>" class="sum first" name="optionsRadios"
+                          <input type="radio" value="<%=data?.dataValues?.web%>" class="sum first" name="optionsRadios"
                             id="web">
                           <span class="indicator"></span>
                         </label>
@@ -176,7 +188,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.mobile%>" class="sum first" name="optionsRadios"
+                          <input type="radio" value="<%=data?.dataValues?.mobile%>" class="sum first" name="optionsRadios"
                             id="mobile">
                           <span class="indicator"></span>
                         </label>
@@ -190,7 +202,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.both%>" class="sum first" name="optionsRadios"
+                          <input type="radio" value="<%=data?.dataValues?.both%>" class="sum first" name="optionsRadios"
                             id="both">
                           <span class="indicator"></span>
                         </label>
@@ -218,7 +230,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" value="<%=data.dataValues.email%>" class="sum login" name="login"
+                          <input type="radio" value="<%=data?.dataValues?.email%>" class="sum login" name="login"
                             id="emaillogin">
                           <span class="indicator"></span>
                         </label>
@@ -232,7 +244,7 @@
                       <div class="radio">
                         <label>
                           <input type="radio" name="login" id="via social Networks"
-                            value="<%=data.dataValues.viaSocial%>" class="sum login">
+                            value="<%=data?.dataValues?.viaSocial%>" class="sum login">
                           <span class="indicator"></span>
                         </label>
                       </div>
@@ -244,7 +256,7 @@
                       <!---->
                       <div class="radio">
                         <label>
-                          <input type="radio" name="login" value="<%=data.dataValues.twoStep%>" class="sum login"
+                          <input type="radio" name="login" value="<%=data?.dataValues?.twoStep%>" class="sum login"
                             id="2 step Authentications">
                           <span class="indicator"></span>
                         </label>
@@ -258,7 +270,7 @@
                       <div class="radio">
                         <label>
                           <input type="radio" name="login" id="No Signup Required" class="sum login"
-                            value="<%=data.dataValues.NoSignUp%>">
+                            value="<%=data?.dataValues?.NoSignUp%>">
                           <span class="indicator"></span>
                         </label>
                       </div>
@@ -286,7 +298,7 @@
                       <div class="radio">
                         <label>
                           <input type="radio" name="user" id="user & Accounts Required" class="sum profile"
-                            value="<%=data.dataValues.accrequired%>">
+                            value="<%=data?.dataValues?.accrequired%>">
                           <span class="indicator"></span>
                         </label>
                       </div>
@@ -299,7 +311,7 @@
                       <div class="radio">
                         <label>
                           <input type="radio" name="user" id="Not Required" class="sum profile"
-                            value="<%=data.dataValues.notrequired%>">
+                            value="<%=data?.dataValues?.notrequired%>">
 
                           <span class="indicator"></span>
                         </label>
@@ -330,7 +342,7 @@
                     <h4>Enough for MVP</h4>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="User Feed" class="sum check" value="<%=data.dataValues.userFeed%>"
+                        <input type="checkbox" id="User Feed" class="sum check" value="<%=data?.dataValues?.userFeed%>"
                           name="userFeed">
                         <label for="User Feed">User Feed <span>
 
@@ -339,7 +351,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Search" class="sum check" value="<%=data.dataValues.search%>"
+                        <input type="checkbox" id="Search" class="sum check" value="<%=data?.dataValues?.search%>"
                           name="search">
                         <label for="Search">Search <span>
 
@@ -349,7 +361,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" class="sum check" id="Messaging and User Engagement"
-                          value="<%=data.dataValues.messUserMan%>" name="messUserMan">
+                          value="<%=data?.dataValues?.messUserMan%>" name="messUserMan">
                         <label for="Messaging and User Engagement">Messaging and User Engagement <span>
 
                           </span></label>
@@ -358,7 +370,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" id="Payment and eCommerce" class="sum check"
-                          value="<%=data.dataValues.payEcommerce%>" name="payEcommerce">
+                          value="<%=data?.dataValues?.payEcommerce%>" name="payEcommerce">
                         <label for="Payment and eCommerce">Payment and eCommerce <span>
 
                           </span></label>
@@ -366,7 +378,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" class="sum check" value=" <%=data.dataValues.userGenerated%>"
+                        <input type="checkbox" class="sum check" value=" <%=data?.dataValues?.userGenerated%>"
                           name="userGenerated" id="User-Generated Content">
                         <label for="User-Generated Content">User-Generated Content <span>
 
@@ -375,7 +387,7 @@
                     </li>
                     <li>
                       <div class="form-group">
-                        <input type="checkbox" id="Booking" class="sum check" value="<%=data.dataValues.Booking%>"
+                        <input type="checkbox" id="Booking" class="sum check" value="<%=data?.dataValues?.Booking%>"
                           name="Booking">
                         <label for="Booking">Booking <span>
 
@@ -388,7 +400,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" id="Push Notifications" class="sum check"
-                          value="<%=data.dataValues.pushNoti%>" name="pushNoti">
+                          value="<%=data?.dataValues?.pushNoti%>" name="pushNoti">
                         <label for="Push Notifications">Push Notifications <span>
 
                           </span></label>
@@ -397,7 +409,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" id="Rating & Reviews" class="sum check"
-                          value="<%=data.dataValues.RatingReview%>" name="RatingReview">
+                          value="<%=data?.dataValues?.RatingReview%>" name="RatingReview">
                         <label for="Rating & Reviews">Rating & Reviews <span>
 
                           </span></label>
@@ -406,7 +418,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" id="Rewards and Deals" class="sum check"
-                          value="<%=data.dataValues.RewardDeal%>" name="RewardDeal">
+                          value="<%=data?.dataValues?.RewardDeal%>" name="RewardDeal">
                         <label for="Rewards and Deals">Rewards & Deals <span>
 
                           </span></label>
@@ -415,7 +427,7 @@
                     <li>
                       <div class="form-group">
                         <input type="checkbox" id="Category and Filters" class="sum check"
-                          value="<%=data.dataValues.categoryFilter%>" name="categoryFilter">
+                          value="<%=data?.dataValues?.categoryFilter%>" name="categoryFilter">
                         <label for="Category and Filters">Category & Filters <span>
 
                           </span></label>
@@ -465,24 +477,47 @@
       $(document).ready(function () {
         function updateSum() {
           var total = 0;
-          $(".sum:checked").each(function (i, n) { total += parseInt($(n).val()); })
+          $(".sum:checked").each(function (i, n) {total += parseInt($(n).val()); })
           $("#total").val(total);
         }
         // run the update on every checkbox change and on startup
         $("input.sum").change(updateSum);
         updateSum();
       })
-      var arr = {}
 
+      
+      function selectWebFixedAndNonFixed(x){
+        $.ajax({
+          method: "GET",
+          url:"/?id="+x,
+          data:{}
+        }).done(function(msg) {
+          // alert("fynccc")
+          
+        })}
+
+      var arr = {}
       $(document).ready(function () {
         arr.feature = [];
 
         $(".A").click(function () {
           arr.osapp = event.target.id;
+          console.log("arradrsrrsrs==>",arr)
+          if(event.target.id == 1)
+          {
+            $(".data").show();
+            $(".data1").hide();
+          }
+          if(event.target.id == 2)
+          {
+            $(".data").hide();
+            $(".data1").show();
+          }
         })
 
         $(".app_logo").click(function () {
           arr.industry = event.target.id;
+          console.log("arrayyyyyy===>",event.target.id)
         })
 
         $(".first").click(function () {
@@ -498,7 +533,6 @@
         })
 
         $(".login").click(function () {
-
           if (!arr.logintype) {
             arr.logintype = event.target.id
           }
@@ -506,7 +540,6 @@
             delete arr["logintype"]
             arr.logintype = event.target.id
           }
-
         })
 
         $(".profile").click(function () {
@@ -517,15 +550,25 @@
             delete arr["profile"]
             arr.profile = event.target.id
           }
-
         })
 
-        $(".check").click(function () {
-          console.log("thisisisss", event.target.id)
-          arr.feature.push(event.target.id)
-          console.log("array====>", arr)
-          console.log("feature array", arr.feature)
-        })
+        // $(".check").click(function () {
+        //   console.log("thisisisss", event.target.id)
+        //   arr.feature.push(event.target.id)
+        //   console.log("array====>", arr)
+        //   console.log("feature array", arr.feature)
+        // })
+
+        $('#GFG_UP')
+        .text('First check few elements then click on the button.');
+        $('.check').click(function() {
+              arr.feature = [];
+            console.log(" harish array ====>",arr)
+            $("input:checkbox:checked").each(function() {
+                arr.feature.push($(this).attr("name"));
+            });
+            $('#GFG_DOWN').text(arr.feature);
+        });
 
         $(".lasttype").change(function () {
           var name = $("#name").val();
@@ -533,7 +576,6 @@
           arr.name = name
           arr.email = email
           console.log("This is final=====>", arr)
-
         })
 
       })
@@ -609,13 +651,24 @@
 
     <!-- valiadation scripts -->
     <script>
-      var inputElems = document.getElementsByClassName("sum");
-      for (var i = inputElems.length - 1; i >= 0; --i) {
-        var elem = inputElems[i];
-        elem.onchange = function () {
-          document.getElementById("check-btn").removeAttribute("disabled")
-        };
-      }
+
+$('#check-btn').prop("disabled", true);
+      $('input:checkbox').click(function () {
+        if ($(this).is(':checked')) {
+          $('#check-btn').prop("disabled", false);
+        } else {
+          if ($('.check').filter(':checked').length < 1) {
+            $('#check-btn').attr('disabled', true);
+          }
+        }
+      });
+      // var inputElems = document.getElementsByClassName("sum");
+      // for (var i = inputElems.length - 1; i >= 0; --i) {
+      //   var elem = inputElems[i];
+      //   elem.onchange = function () {
+      //     document.getElementById("check-btn").removeAttribute("disabled")
+      //   };
+      // }
 
       var inputElems = document.getElementsByName("login");
       for (var i = inputElems.length - 1; i >= 0; --i) {
@@ -729,7 +782,7 @@
       });
       $(".submit").click(function () {
         // return false;
-        let data=JSON.stringify(arr)
+        let data = JSON.stringify(arr)
         alert(data)
         $.ajax({
           method: "POST",
@@ -738,7 +791,7 @@
         }).done(function (msg) {
           alert("Data send seccussfull")
         });
-        
+
       })
     </script>
 </body>

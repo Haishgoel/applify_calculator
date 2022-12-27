@@ -43,7 +43,7 @@ module.exports = {
         let condition={
             email:payload.email
         } 
-console.log("this is id",addUser.id)
+        console.log("this is id",addUser.id)
         
         let newFeature=[]
         if (addUser) {
@@ -60,8 +60,7 @@ console.log("this is id",addUser.id)
                 newFeature.push({
                   userId: addUser.id,
                   featureName: feature,
-                });
-            
+                });  
               });
                await Service.featureServices.createFeature(newFeature);
             }

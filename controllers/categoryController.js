@@ -90,6 +90,16 @@ if (addCategory) {
     }
   },
 
+  getCate :  async(paramData) => {
+
+    let value = Service.categoryServices.getCategory(paramData);
+    if (value) {
+      return value;
+    } else {
+      throw Response.error_msg.recordNotFound
+    }
+  },
+
   getAllCategory :  async(paramData) => {
     let profile = Service.categoryServices.getAllCategory();
     if (profile) {
